@@ -15,8 +15,6 @@ namespace AddressBook
         public string Zipcode;
         public string PhoneNumber;
         public string email;
-
-
         public void Show()
         {
             CreateNewContact cc = new CreateNewContact();
@@ -53,8 +51,6 @@ namespace AddressBook
             Console.WriteLine("\nPhone Number: " + cc.PhoneNumber);
             Console.WriteLine("\nEmail ID: " + cc.email);
             Console.WriteLine("-------------------------------------------");
-
         }
     }
-
 }

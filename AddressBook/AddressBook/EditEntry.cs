@@ -39,12 +39,8 @@ namespace AddressBook
 
             Console.Write("Enter the Email ID: ");
             person.email = Console.ReadLine();
-
-
             People.Add(person);
         }
-
-
         public static void AllDetails(EditEntry person)
         {
             Console.WriteLine("First Name: " + person.Firstname);
@@ -110,28 +106,24 @@ namespace AddressBook
                             break;
 
                         case 3:
-
                             Console.WriteLine("Enter New City: ");
                             person.City = Console.ReadLine();
                             People.Add(person);
                             Console.WriteLine("City: " + person.City);
                             break;
                         case 4:
-
                             Console.WriteLine("Enter New State: ");
                             person.State = Console.ReadLine();
                             People.Add(person);
                             Console.WriteLine("State Name: " + person.State);
                             break;
                         case 5:
-
                             Console.WriteLine("Enter New ZipCode: ");
                             person.Zipcode = Console.ReadLine();
                             People.Add(person);
                             Console.WriteLine("ZipCode: " + person.Zipcode);
                             break;
                         case 6:
-
                             Console.WriteLine("Enter New PhoneNumber: ");
                             person.PhoneNumber = Console.ReadLine();
                             People.Add(person);
