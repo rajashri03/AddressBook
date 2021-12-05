@@ -23,12 +23,11 @@ namespace AddressBook
             Console.Write("Enter Your Zipcode:");
             addNew.ZipCode = Console.ReadLine();
             Console.Write("Enter Your Phone Number:");
-            addNew.PhoneNumber =Console.ReadLine();
+            addNew.PhoneNumber = Console.ReadLine();
             Console.Write("Enter Your Email:");
             addNew.Email = Console.ReadLine();
             return addNew;
         }
-        
+
     }
 }
-
