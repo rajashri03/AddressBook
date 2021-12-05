@@ -62,7 +62,6 @@ namespace AddressBook
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Address Book is already full.");
                 Console.ResetColor();
-
             }
         }
     }
