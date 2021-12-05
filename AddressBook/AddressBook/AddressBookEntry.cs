@@ -37,7 +37,6 @@ namespace AddressBook
             addNew.Email = Console.ReadLine();
             return addNew;
         }
-
         public void AddNewContact()
         {
             Contact newContact = CreateContact();
@@ -65,9 +64,6 @@ namespace AddressBook
                 Console.ResetColor();
 
             }
-
-                
-
         }
     }
 }
