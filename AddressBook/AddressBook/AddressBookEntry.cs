@@ -8,7 +8,16 @@ namespace AddressBook
 {
     public class AddressBookEntry
     {
-        List<Contact> addressBook = new List<Contact>();
+        private Contact[] entries;//Class With Array of object
+        private int totalEntries = 0;
+        public int Size { get; private set; }
+
+        public AddressBookEntry(int size)//Parameterized Constructor 
+        {
+            entries = new Contact[size];//It will Create an Array
+            Size = size;
+        }
+        List<Contact> addressBook = new List<Contact>();//Creating List of Objects
         public Contact CreateContact()
         {
             Contact addNew = new Contact();
@@ -29,5 +38,37 @@ namespace AddressBook
             return addNew;
         }
 
+        public void AddNewContact()
+        {
+            Contact newContact = CreateContact();
+            addressBook.Add(newContact);
+            if (totalEntries < entries.Length)
+            {
+                entries[totalEntries++] = newContact;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Added successfuly!");
+                Console.ResetColor();
+
+                Console.WriteLine("\n*****-> Details Of Person  <-*****");
+                Console.WriteLine($"First Name: {newContact.FirstName}");
+                Console.WriteLine($"Last Name: {newContact.LastName}");
+                Console.WriteLine($"City Name: {newContact.City}");
+                Console.WriteLine($"State Name: {newContact.State}");
+                Console.WriteLine($"Zipcode: {newContact.ZipCode}");
+                Console.WriteLine($"Phone Number: {newContact.PhoneNumber}");
+                Console.WriteLine($"Email: {newContact.Email}");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Address Book is already full.");
+                Console.ResetColor();
+
+            }
+
+                
+
+        }
     }
 }
+

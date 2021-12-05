@@ -8,6 +8,8 @@ namespace AddressBook
 {
     public class Contact
     {
+        // get method-returns the value of the variable.
+        // set method-assigns a value to the variable. 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string City { get; set; }
