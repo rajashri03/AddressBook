@@ -73,11 +73,11 @@ namespace AddressBook
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        for (int j = 0; j < People.Count; j++)
+                        for (int k = 0; k < number; k++)
                         {
                             Console.Write("Enter the First Name: ");
                             string fname = Console.ReadLine();
-                            if (People[j].Firstname.Equals(fname))
+                            if (People[k].Firstname.Equals(fname))
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("Name already exists\n");
