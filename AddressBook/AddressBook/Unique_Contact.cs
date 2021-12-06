@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    public class AddMultiple
+    public class Unique_Contact
     {
         public string Firstname;
         public string Lastname;
@@ -15,10 +15,10 @@ namespace AddressBook
         public string Zipcode;
         public string PhoneNumber;
         public string email;
-        public static List<AddMultiple> People = new List<AddMultiple>();
+        public static List<Unique_Contact> People = new List<Unique_Contact>();
         public static void NewContact()
         {
-            AddMultiple person = new AddMultiple();
+            Unique_Contact person = new Unique_Contact();
             Console.Write("Enter First Name: ");
             person.Firstname = Console.ReadLine();
 
@@ -41,7 +41,7 @@ namespace AddressBook
             person.email = Console.ReadLine();
             People.Add(person);
         }
-        public static void AllDetails(AddMultiple person)
+        public static void AllDetails(Unique_Contact person)
         {
             Console.WriteLine("First Name: " + person.Firstname);
             Console.WriteLine("Last Name: " + person.Lastname);
@@ -50,6 +50,7 @@ namespace AddressBook
             Console.WriteLine("Zip Code: " + person.Zipcode);
             Console.WriteLine("Phone Number: " + person.PhoneNumber);
             Console.WriteLine("Email ID: " + person.email);
+            Console.WriteLine("*********************************************\n");
         }
         public static void ListAllContacts()
         {
@@ -59,11 +60,10 @@ namespace AddressBook
             foreach (var person in People)
             {
                 AllDetails(person);
-               
             }
 
         }
-        public static void MultipleContact()
+        public static void UniqueContactshow()
         {
             Console.Write("Enter Count-How Many contact You want to add?");
             int number = Convert.ToInt32(Console.ReadLine());
@@ -73,8 +73,26 @@ namespace AddressBook
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        NewContact();
-                        ListAllContacts();
+                        for (int j = 0; j < People.Count; j++)
+                        {
+                            Console.Write("Enter the First Name: ");
+                            string fname = Console.ReadLine();
+                            if (People[j].Firstname.Equals(fname))
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Name already exists\n");
+                                Console.ResetColor();
+                                Console.ReadKey();
+                                Console.WriteLine("\nEnter a New name and Add the details");
+                                NewContact();
+                                ListAllContacts();
+                            }
+                            else
+                            {
+                                NewContact();
+                                ListAllContacts();
+                            }
+                        }
                         break;
 
                     default:
